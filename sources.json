@@ -1,0 +1,190 @@
+[
+  {
+    "name": "IOCL e-Tendering",
+    "url": "https://iocletenders.nic.in/nicgep/app?page=FrontEndTendersByOrganisation&service=page",
+    "searchUrl": "https://iocletenders.nic.in/nicgep/app?page=FrontEndAdvancedSearch&service=page",
+    "type": "gepnic_by_organisation",
+    "enabled": true,
+    "maxNewPerRun": 10,
+    "notes": "Free/official. NIC GePNIC engine, no login required. Reads every active tender through the public 'Tenders by Organisation' page (no captcha, checked 2026-09-24): IOCL lists a single organisation, 'IndianOil', with ~220 active tenders, all on one page, so a run is 2 page loads. Replaced the homepage widget (10 newest only, never produced an EV match). At most 10 new matches added per run; the rest follow on later runs. searchUrl is the stable, session-independent search page dashboard cards link to (verified live 2026-09-18). No robots.txt."
+  },
+  {
+    "name": "CPPP / etenders.gov.in",
+    "url": "https://etenders.gov.in/eprocure/app?page=FrontEndTendersByOrganisation&service=page",
+    "searchUrl": "https://etenders.gov.in/eprocure/app?page=FrontEndAdvancedSearch&service=page",
+    "type": "gepnic_by_organisation",
+    "enabled": true,
+    "maxNewPerRun": 10,
+    "orgsPerRun": 10,
+    "notes": "Free/official. Reads every active tender through the public 'Tenders by Organisation' page (no captcha, checked 2026-09-24): ~78 organisations with ~1,950 active tenders; each organisation's list is one page (the largest, NHAI's 412, isn't paginated). orgsPerRun=10 reads the next 10 organisations each scheduled run (~11 page loads), covering all of them in about a day, instead of ~80 loads every run (a crawl that heavy is what triggered captchas before). At most 10 new matches added per run. Replaced the homepage widget (10 newest only, never produced an EV match). searchUrl verified live 2026-09-18. No robots.txt."
+  },
+  {
+    "name": "Rajasthan e-Tendering",
+    "url": "https://eproc.rajasthan.gov.in/nicgep/app?page=FrontEndTendersByOrganisation&service=page",
+    "searchUrl": "https://eproc.rajasthan.gov.in/nicgep/app?page=FrontEndAdvancedSearch&service=page",
+    "type": "gepnic_by_organisation",
+    "enabled": true,
+    "maxNewPerRun": 10,
+    "orgsPerRun": 10,
+    "notes": "Free/official. No robots.txt (checked again 2026-09-28). Reads every active tender through the public 'Tenders by Organisation' page (no captcha, checked 2026-09-28): ~87 organisations with ~3,100 active tenders (largest: Panchayati Raj Department, ~860), each organisation's list on one page. orgsPerRun=10 reads the next 10 each scheduled run (~11 page loads), covering all of them in about a day. At most 10 new matches added per run. Replaced the homepage widget (10 newest only). searchUrl verified live 2026-09-18."
+  },
+  {
+    "name": "Madhya Pradesh e-Tendering",
+    "url": "https://mptenders.gov.in/nicgep/app?page=FrontEndTendersByOrganisation&service=page",
+    "searchUrl": "https://mptenders.gov.in/nicgep/app?page=FrontEndAdvancedSearch&service=page",
+    "type": "gepnic_by_organisation",
+    "enabled": true,
+    "maxNewPerRun": 10,
+    "orgsPerRun": 10,
+    "notes": "Free/official. No robots.txt (checked again 2026-09-28). Reads every active tender through the public 'Tenders by Organisation' page (no captcha, checked 2026-09-28): ~95 organisations with ~5,500 active tenders. The largest, Directorate Urban Administration and Development (the municipal bodies, ~3,060 tenders), is still one page: 6.3 MB, ~7 s to load, checked 2026-09-28. orgsPerRun=10 reads the next 10 each scheduled run, covering all of them in about a day. At most 10 new matches added per run. Replaced the homepage widget (10 newest only). searchUrl verified live 2026-09-18."
+  },
+
+
+
+  {
+    "name": "EESL (Energy Efficiency Services Ltd)",
+    "url": "https://eeslindia.org/en/tenders/",
+    "searchUrl": "https://eeslindia.org/en/tenders/",
+    "type": "eesl_wp_list",
+    "enabled": true,
+    "notes": "Free/official govt PSU. NOT a GePNIC portal (was wrongly set to gepnic_table before 2026-09-22) — this is a WordPress page listing every tender/notice as a 'current_latest_boxs' accordion div, not a <table>. Verified live 2026-09-22: robots.txt only disallows /wp-admin/, this page is allowed; no login, no captcha. All ~240 entries (going back to 2021) sit on one static page — no rolling top-10 window, so no risk of a match rotating off between checks. Each entry links to a real, stable PDF document URL (not session-bound), used directly as the tender's url instead of searchUrl. No structured closing date on the page itself (only inside the linked PDF)."
+  },
+  {
+    "name": "NHAI",
+    "url": null,
+    "type": "unsupported",
+    "enabled": true,
+    "notes": "Covered through CPPP: NHAI publishes its tenders on CPPP/etenders.gov.in, where it's one of the organisations the CPPP source rotates through (~412 active tenders, checked 2026-09-24). nhai.gov.in has no robots.txt, but no separate public listing is needed. Kept as 'unsupported' so it isn't scraped twice."
+  },
+  {
+    "name": "Maharashtra e-Tendering (mahatenders.gov.in)",
+    "url": "https://mahatenders.gov.in/nicgep/app",
+    "type": "blocked_by_robots_txt",
+    "enabled": true,
+    "notes": "Same NIC GePNIC engine as the others, but this domain's robots.txt disallows all automated access ('User-agent: * / Disallow: /', checked 2026-09-17 and again 2026-09-28). Do not scrape. Its tenders can still reach the dashboard through TenderDetail, which lists tenders from many portals."
+  },
+  {
+    "name": "GeM (bidplus.gem.gov.in)",
+    "url": "https://bidplus.gem.gov.in",
+    "type": "blocked_by_robots_txt",
+    "enabled": false,
+    "notes": "Checked 2026-09-28: robots.txt now only disallows /resources/ and a few bank-guarantee paths (it used to disallow everything), and the 'All Bids' list is public with no captcha. But GeM's Copyright Policy (gem.gov.in/websitePolicies) says its contents 'may not be reproduced partially or fully without due permission in writing in advance from the GeM SPV'. So: don't scrape without that written permission. Some GeM bids reach the dashboard through TenderDetail. type stays blocked so it can't be scraped by flipping enabled."
+  },
+  {
+    "name": "CESL e-procurement (cesl.eproc.in)",
+    "url": "https://cesl.eproc.in",
+    "type": "blocked_by_robots_txt",
+    "enabled": false,
+    "notes": "Checked 2026-09-28: robots.txt no longer exists (404; it used to disallow all), but the homepage is only an empty 'CESL e-Procurement Portal' shell with no tender links, even after its scripts run, so there's nothing public to read automatically yet. Needs a manual look in a browser to see where (or whether) CESL lists tenders publicly; cesl.co.in timed out. Kept blocked until then."
+  },
+
+
+  
+  {
+    "name": "Telangana e-Procurement (keyword search)",
+    "url": "https://tender.telangana.gov.in/",
+    "type": "js_interactive_search",
+    "enabled": true,
+    "preClickSelector": "#viewCurrentall",
+    "searchInputSelector": "#nTenderID",
+    "searchButtonSelector": "#searchTender",
+    "searchKeyword": "charging station",
+    "extraSearchKeywords": ["battery", "inverter", "energy storage", "electrolyser"],
+    "searchBy": "tenderId",
+    "searchHint": "On Telangana's homepage, click More... (the search page only opens that way), paste the Tender ID into the search box and click Search.",
+    "notes": "Free/official. Not the classic NIC GePNIC layout (custom platform) — previously listed as 'unsupported' since neither /nicgep/app path resolved. Confirmed 2026-09-22: this is a single-page app similar to Bihar's, but with an extra wrinkle — loading https://tender.telangana.gov.in/TenderDetailsHome.html directly gets redirected to a session-timeout page; the search form is only reachable by loading the root URL above and clicking its homepage 'More...' link (#viewCurrentall) first, which is what preClickSelector does. Keyword box is #nTenderID, submit button is #searchTender. Verified live: searching 'charging station' this way returns all 3 real matching tenders (previously only Bihar-style direct navigation was supported, which silently produced 0/incomplete results here). Selectors found via debug_js_source.py's --click flag plus a manual Playwright REPL session against the live page. Left disabled until a first live run has been checked end-to-end — flip to true once confirmed working."
+  },
+  {
+    "name": "Gujarat nProcure (keyword search)",
+    "url": "https://tender.nprocure.com/",
+    "type": "js_interactive_search",
+    "enabled": true,
+    "searchInputSelector": "#TENDERTITLE:visible",
+    "searchButtonSelector": "#searchButtonId:visible",
+    "searchKeyword": "charging station",
+    "extraSearchKeywords": ["battery", "inverter", "energy storage", "electrolyser"],
+    "searchBy": "titlePrefix",
+    "searchHint": "Paste it into the Tender Title box and click Search.",
+    "titleRegex": "Name Of Work\\s*:\\s*(.+?)\\s*(?:Corrigendum\\s*:|Estimated Contract Value|Last Date|$)",
+    "valueRegex": "Estimated Contract Value\\s*:\\s*([\\d,]+(?:\\.\\d+)?)",
+    "notes": "Free/official (run by (n)Code Solutions, not NIC GePNIC). No-login public tender search, confirmed live 2026-09-22 — previously listed as 'unsupported'. Single-page app like Bihar/Telangana: URL doesn't change on search, so js_interactive_search is required. Unlike Bihar, these selectors are unique IDs with no hidden-duplicate issue (#TENDERTITLE is labeled 'Tender Title', #searchButtonId is the confirmed submit button). Searching 'charging station' returned 2 real matches during manual testing via debug_js_source.py. Left disabled until a first live run through the full scraper.py pipeline has been checked end-to-end (title/date parsing quality, not just raw fetch) — flip to true once confirmed."
+  },
+  {
+    "name": "Bihar e-Procurement 2.0 (keyword search)",
+    "url": "https://eproc2.bihar.gov.in/EPSV2Web/openarea/tenderListingPage.action",
+    "type": "js_interactive_search",
+    "enabled": true,
+    "searchInputSelector": "input[placeholder='Type any keyword']:visible",
+    "searchButtonSelector": "button.submit_nil:visible",
+    "searchKeyword": "charging stations",
+    "extraSearchKeywords": ["battery", "inverter", "energy storage", "electrolyser"],
+    "searchBy": "title",
+    "notes": "Free/official. No-login public tender search (confirmed live 2026-09-22) — previously listed as 'unsupported' since this eProc 2.0 platform isn't the classic NIC GePNIC layout. Confirmed to be a single-page app: the URL never changes on search, so js_rendered_table (which just loads the URL) won't work here — needs js_interactive_search to actually type the keyword and click submit. Selectors found via debug_js_source.py --search against the live page on 2026-09-22; re-verify if the site's markup changes. Left disabled until a first live run has been checked end-to-end — flip to true once confirmed working."
+  },
+
+
+
+
+
+  {
+    "name": "TenderDetail (charging station listing)",
+    "url": "https://www.tenderdetail.com/Indian-tender/charging-station-tenders",
+    "type": "tenderdetail_list",
+    "enabled": true,
+    "maxNewPerRun": 10,
+    "notes": "Paid aggregator you subscribe to, but this keyword listing page is public with no login. Checked 2026-09-23: robots.txt is 'Allow: /' for all agents, and the Terms of Usage have no clause against scraping or automated access, but they do limit use to 'personal or internal purposes'. It's enabled on the understanding that the dashboard is internal only; if the dashboard becomes public, re-check that. One plain GET per run (server-rendered HTML, ~50 cards, no pagination). maxNewPerRun caps how many unseen tenders are added per run, so the rest trickle in as new over later runs. Each tender links to its stable TenderDetail notice page. refNo is left empty because the '#' number on each card is TenderDetail's own id, not the issuing authority's ref no."
+  },
+
+
+
+
+
+
+
+  {
+    "name": "TenderDetail (battery & power electronics listings)",
+    "url": "https://www.tenderdetail.com/Indian-tender/battery-energy-storage-system-tenders",
+    "extraUrls": [
+      "https://www.tenderdetail.com/Indian-tender/bess-tenders",
+      "https://www.tenderdetail.com/Indian-tender/battery-tester-tenders",
+      "https://www.tenderdetail.com/Indian-tender/inverter-tenders",
+      "https://www.tenderdetail.com/Indian-tender/electrolyser-tenders",
+      "https://www.tenderdetail.com/Indian-tender/electrolyzer-tenders",
+      "https://www.tenderdetail.com/Indian-tender/energy-management-system-tenders",
+      "https://www.tenderdetail.com/Indian-tender/e-rickshaw-charger-tenders"
+    ],
+    "type": "tenderdetail_list",
+    "enabled": true,
+    "maxNewPerRun": 10,
+    "notes": "Same site and terms as 'TenderDetail (charging station listing)': public keyword listing pages, no login, robots.txt allows all, terms allow internal use. Added 2026-09-29 for the 'Battery, BESS & Power Electronics' category: 8 listing pages (BESS, battery tester, inverter, electrolyser/electrolyzer, energy management system, e-rickshaw charger), all checked live that day (2-50 tenders each). One page load each per run (8 total), with a pause between. Only titles matching config/categories.json are kept, so e.g. inverter ACs on the inverter page are dropped. At most 10 new tenders added per run."
+  },
+  {
+    "name": "TendersOnTime",
+    "url": "https://www.tendersontime.com",
+    "type": "tenderdetail_list",
+    "enabled": false,
+    "notes": ""
+  },
+  {
+    "name": "Tendersniper",
+    "url": "https://www.tendersniper.com",
+    "searchUrl": "https://tendersniper.com/search/search.xhtml?searchString=electric+vehicle+charging+stations&type=semantic&fn=0&selectedSearchType=1",
+    "type": "tenderdetail_list",
+    "enabled": false,
+    "notes": ""
+  },
+  {
+    "name": "NationalTenders",
+    "url": "https://www.nationaltenders.com/site/keyword/electric-vehicle-charging-station",
+    "type": "tenderdetail_list",
+    "enabled": false,
+    "notes": ""
+  },
+  {
+    "name": "Tender18",
+    "url": "https://tender18.com/all-india-tenders/keyword-tenders/electrical-vehicle-charging-stations-tenders",
+    "type": "tenderdetail_list",
+    "enabled": false,
+    "notes": ""
+  }
+]

@@ -1,0 +1,13 @@
+Subject: Tender Radar — {{NEW_COUNT}} new match(es), {{DUE_SOON_COUNT}} closing soon
+
+Tender Radar automatic digest — {{RUN_TIME}}
+
+{{NEW_SECTION}}
+
+{{DUE_SOON_SECTION}}
+
+--
+Open the dashboard:
+{{DASHBOARD_URL}}
+
+Sent automatically by the Tender Radar GitHub Actions workflow.

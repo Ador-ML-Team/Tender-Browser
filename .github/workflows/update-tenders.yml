@@ -1,0 +1,76 @@
+name: Update EV charging tenders
+
+on:
+  schedule:
+    # Every 3 hours. Every source now shows its full current list (keyword
+    # searches, TenderDetail, EESL, and GePNIC's "Tenders by Organisation"
+    # pages), and tenders stay open for weeks, so nothing scrolls off between
+    # checks. (It used to be every 15 minutes, to catch GePNIC's "10 newest"
+    # homepage widget before it rotated; that widget never produced an EV
+    # match, and GitHub ran the job only every 3-5 hours anyway.) Sources with
+    # "orgsPerRun" move to their next organisations each run: keep
+    # TENDER_ROTATION_HOURS (default 3) in step with this. Email digests are
+    # throttled separately (tender_radar/notify.py, MIN_HOURS_BETWEEN_DIGESTS).
+    - cron: '0 */3 * * *'
+  workflow_dispatch: {}   # adds a "Run workflow" button on the Actions tab for on-demand runs
+
+concurrency:
+  group: update-tenders
+  cancel-in-progress: false   # queue a run rather than overlap with one still in progress
+
+permissions:
+  contents: write   # needed so the workflow can commit the updated data file back to the repo
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # Required: scraper.py loads every source through a headless browser.
+      - name: Install Playwright browser
+        run: playwright install --with-deps chromium
+
+      - name: Run scraper
+        env:
+          SMTP_HOST: ${{ vars.SMTP_HOST }}
+          SMTP_PORT: ${{ vars.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_ENABLE_SSL: ${{ vars.SMTP_ENABLE_SSL }}
+          NOTIFY_FROM_EMAIL: ${{ vars.NOTIFY_FROM_EMAIL }}
+          NOTIFY_RECIPIENTS: ${{ vars.NOTIFY_RECIPIENTS }}
+          DUE_SOON_DAYS: ${{ vars.DUE_SOON_DAYS }}
+          DASHBOARD_URL: ${{ vars.DASHBOARD_URL }}
+          MIN_HOURS_BETWEEN_DIGESTS: ${{ vars.MIN_HOURS_BETWEEN_DIGESTS }}
+          # scraper.py defaults to the system's Microsoft Edge (for local runs
+          # on networks that block Playwright's browser download); here, use
+          # the Chromium installed by the step above instead.
+          PLAYWRIGHT_CHROMIUM_CHANNEL: chromium
+        run: python scraper.py
+
+      - name: Commit updated tender data if anything changed
+        run: |
+          git config user.name "tender-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/data/tenders.json
+          # digest_state.json only exists once an email has actually been sent
+          # (needs SMTP configured) — "git add" a nonexistent path is a
+          # fatal error, which was silently killing this step on every run.
+          if [ -f digest_state.json ]; then git add digest_state.json; fi
+          if git diff --cached --quiet; then
+            echo "No new tenders — nothing to commit."
+          else
+            git commit -m "Auto-update tender data ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            git pull --rebase
+            git push
+          fi
