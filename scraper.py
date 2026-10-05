@@ -1,24 +1,3 @@
-"""
-EV Charging Tender Scraper — entry point.
-
-    pip install -r requirements.txt
-    python scraper.py
-
-Checks every enabled portal in sources.json, keeps the EV-charging tenders,
-and merges them into docs/data/tenders.json, the file the Tender Radar
-dashboard (docs/index.html) reads. The scheduled GitHub Actions workflow
-(.github/workflows/update-tenders.yml) runs exactly this.
-
-The code lives in the tender_radar/ package; see ARCHITECTURE.md for how it
-fits together, and tender_radar/__init__.py for the module map.
-
-Uses the system's Microsoft Edge by default, so no `playwright install`
-download is needed (see tender_radar/browser.py). To preview the dashboard
-against local data, run `python -m http.server` from the repo root and visit
-localhost:8000/docs/ — opening docs/index.html directly (file://) can't fetch
-data/tenders.json due to browser security rules around local files.
-"""
-
 import logging
 import os
 import sys
