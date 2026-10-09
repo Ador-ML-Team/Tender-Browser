@@ -2338,5 +2338,35 @@
     "firstSeen": "2026-10-09",
     "searchText": null,
     "searchHint": null
+  },
+  {
+    "id": "AUTO-ec09d916a2",
+    "desc": "Design, Supply, Testing, Installation and Commissioning of 20 MWH/ 10 MW grid connected Battery Energy Storage System (BESS) in Cochin Shipyard Limited",
+    "refNo": "UM/MRS/T/003/26-27",
+    "location": null,
+    "value": null,
+    "dueDate": "2026-10-13",
+    "category": "Battery, BESS & Power Electronics",
+    "source": "CPPP / etenders.gov.in",
+    "url": "https://etenders.gov.in/eprocure/app?page=FrontEndAdvancedSearch&service=page",
+    "linkType": "search",
+    "firstSeen": "2026-10-09",
+    "searchText": null,
+    "searchHint": null
+  },
+  {
+    "id": "AUTO-0615912015",
+    "desc": "Supply of Item 1. Solar PV Module for charging 48V Battery Bank in three wheeler Electric Rickshaw . Item 2. Solar battery charger .",
+    "refNo": null,
+    "location": "West Bengal",
+    "value": null,
+    "dueDate": null,
+    "category": "Battery, BESS & Power Electronics",
+    "source": "TenderDetail (battery & power electronics listings)",
+    "url": "https://www.tenderdetail.com/Indian-Tenders/TenderNotice/14860741/fc3b60171b8deea151ae7c3ae94378e5",
+    "linkType": "direct",
+    "firstSeen": "2026-10-09",
+    "searchText": null,
+    "searchHint": null
   }
 ]
