@@ -1050,21 +1050,6 @@
     "searchHint": null
   },
   {
-    "id": "AUTO-5ad5afe80f",
-    "desc": "Bids Are invited for Inverter (V2) (Q2)",
-    "refNo": null,
-    "location": "Kerala",
-    "value": "₹62,800",
-    "dueDate": "2026-10-10",
-    "category": "Battery, BESS & Power Electronics",
-    "source": "TenderDetail (battery & power electronics listings)",
-    "url": "https://www.tenderdetail.com/Indian-Tenders/TenderNotice/57795552/0e5e01bc0e3ca8999bf3217057e2b60c",
-    "linkType": "direct",
-    "firstSeen": "2026-10-07",
-    "searchText": null,
-    "searchHint": null
-  },
-  {
     "id": "AUTO-f76dafd731",
     "desc": "Bids Are invited for Inverter (V2) (Q2)",
     "refNo": null,
@@ -1470,21 +1455,6 @@
     "searchHint": null
   },
   {
-    "id": "AUTO-db129a738c",
-    "desc": "Bids Are invited for Inverter Grade 3-Ph Squirrel Cage Induction Motor",
-    "refNo": null,
-    "location": "Odisha",
-    "value": null,
-    "dueDate": "2026-10-10",
-    "category": "Battery, BESS & Power Electronics",
-    "source": "TenderDetail (battery & power electronics listings)",
-    "url": "https://www.tenderdetail.com/Indian-Tenders/TenderNotice/57788333/75fcd2947ae91edfd851d0a4b3228e84",
-    "linkType": "direct",
-    "firstSeen": "2026-10-08",
-    "searchText": null,
-    "searchHint": null
-  },
-  {
     "id": "AUTO-dc6a5c16b6",
     "desc": "Tender for Repairing Of Generator And Inverter In All Property Of Kbmc",
     "refNo": null,
@@ -1689,21 +1659,6 @@
     "category": "Battery, BESS & Power Electronics",
     "source": "TenderDetail (battery & power electronics listings)",
     "url": "https://www.tenderdetail.com/Indian-Tenders/TenderNotice/57927317/69ae109d1781c8fa9abb29f9151aa8db",
-    "linkType": "direct",
-    "firstSeen": "2026-10-08",
-    "searchText": null,
-    "searchHint": null
-  },
-  {
-    "id": "AUTO-f4aee5e973",
-    "desc": "Short dated tender - Bids Are invited for Inverter (V2)",
-    "refNo": null,
-    "location": "Karnataka",
-    "value": null,
-    "dueDate": "2026-10-10",
-    "category": "Battery, BESS & Power Electronics",
-    "source": "TenderDetail (battery & power electronics listings)",
-    "url": "https://www.tenderdetail.com/Indian-Tenders/TenderNotice/57925825/1b33fca960d4a0eb5e4be4fb8d324198",
     "linkType": "direct",
     "firstSeen": "2026-10-08",
     "searchText": null,
@@ -1945,21 +1900,6 @@
     "source": "CPPP / etenders.gov.in",
     "url": "https://etenders.gov.in/eprocure/app?page=FrontEndAdvancedSearch&service=page",
     "linkType": "search",
-    "firstSeen": "2026-10-09",
-    "searchText": null,
-    "searchHint": null
-  },
-  {
-    "id": "AUTO-caed26ddb8",
-    "desc": "Tender for Providing Ac Dc Charging Station System In Nandgaon Nagarparishad Area At Nandgaon Tal Nandgaon Dist Nashik",
-    "refNo": null,
-    "location": "Maharashtra",
-    "value": "₹9.41 Lakh",
-    "dueDate": "2026-10-10",
-    "category": "Other EV Charging",
-    "source": "TenderDetail (charging station listing)",
-    "url": "https://www.tenderdetail.com/Indian-Tenders/TenderNotice/57788949/d3e656224bfef7d7bc3f217f4e402286",
-    "linkType": "direct",
     "firstSeen": "2026-10-09",
     "searchText": null,
     "searchHint": null
@@ -2246,6 +2186,21 @@
     "url": "https://www.tenderdetail.com/Indian-Tenders/TenderNotice/57970813/e2f365a8b58bb17db555e00965a0cf0f",
     "linkType": "direct",
     "firstSeen": "2026-10-10",
+    "searchText": null,
+    "searchHint": null
+  },
+  {
+    "id": "AUTO-27a7fb4602",
+    "desc": "Tender for Providing 11 Kv Sub- Station For Charging Infrastructure Of E-Buses At Bus Depot Cum Workshop, Raipur Kalan, Chandigarh.",
+    "refNo": null,
+    "location": "Chandigarh",
+    "value": "₹4.70 Crore",
+    "dueDate": "2026-10-12",
+    "category": "Other EV Charging",
+    "source": "TenderDetail (charging station listing)",
+    "url": "https://www.tenderdetail.com/Indian-Tenders/TenderNotice/57582572/ffe31593443cb733eff67d12d6ae1301",
+    "linkType": "direct",
+    "firstSeen": "2026-10-11",
     "searchText": null,
     "searchHint": null
   }
