@@ -2248,5 +2248,20 @@
     "firstSeen": "2026-10-14",
     "searchText": null,
     "searchHint": null
+  },
+  {
+    "id": "AUTO-ec09d916a2",
+    "desc": "Design, Supply, Testing, Installation and Commissioning of 20 MWH/ 10 MW grid connected Battery Energy Storage System (BESS) in Cochin Shipyard Limited",
+    "refNo": "UM/MRS/T/003/26-27",
+    "location": null,
+    "value": null,
+    "dueDate": "2026-11-03",
+    "category": "Battery, BESS & Power Electronics",
+    "source": "CPPP / etenders.gov.in",
+    "url": "https://etenders.gov.in/eprocure/app?page=FrontEndAdvancedSearch&service=page",
+    "linkType": "search",
+    "firstSeen": "2026-10-14",
+    "searchText": null,
+    "searchHint": null
   }
 ]
