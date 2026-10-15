@@ -1725,21 +1725,6 @@
     "searchHint": null
   },
   {
-    "id": "AUTO-0ede38428c",
-    "desc": "Selection Of Battery Energy Storage System Developer (BESSD) For Setting Up Of 500 Mwh (125 MW For 4 Hours) Standalone Battery Energy Storage System (BESS) Under Tariff-Based Competitive Bidding (TBCB) On ?BOOT? Basis At Land To Be Provided At Kajra,...",
-    "refNo": null,
-    "location": "Bihar",
-    "value": null,
-    "dueDate": "2026-10-26",
-    "category": "Battery, BESS & Power Electronics",
-    "source": "TenderDetail (battery & power electronics listings)",
-    "url": "https://www.tenderdetail.com/Indian-Tenders/TenderNotice/58002256/87a0bdb8a87f01f1bec1f008236f84e7",
-    "linkType": "direct",
-    "firstSeen": "2026-10-13",
-    "searchText": null,
-    "searchHint": null
-  },
-  {
     "id": "AUTO-fb25ea24c4",
     "desc": "Tender For Setting Up Of 187.5 Mw / 750 Mwh (187.5 Mw X 4 Hrs) Battery Energy Storage System (Bess) In Telangana Associated With “Setting Up Of 187.5 Mw / 750 Mwh (187.5 Mw X 4 Hrs) Battery Energy Storage System (Bess) In Telangana",
     "refNo": null,
@@ -2066,6 +2051,21 @@
     "url": "https://etenders.gov.in/eprocure/app?page=FrontEndAdvancedSearch&service=page",
     "linkType": "search",
     "firstSeen": "2026-10-14",
+    "searchText": null,
+    "searchHint": null
+  },
+  {
+    "id": "AUTO-1550482fb9",
+    "desc": "Selection of Battery Energy Storage System Developer (BESSD) For Setting up of 500 MWh (125 MW for 4 Hours) Standalone Battery Energy Storage System (BESS) Under Tariff-Based Competitive Bidding (TBCB) on ‘BOOT’ Basis at land to be provided at Kajra, Distt. Lakhisarai, Bihar.",
+    "refNo": "07/PR/BSPGCL/2026",
+    "location": "Bihar",
+    "value": null,
+    "dueDate": "2026-10-26",
+    "category": "Battery, BESS & Power Electronics",
+    "source": "Bihar e-Procurement 2.0 (keyword search)",
+    "url": "https://eproc2.bihar.gov.in/EPSV2Web/openarea/tenderListingPage.action",
+    "linkType": "search",
+    "firstSeen": "2026-10-13",
     "searchText": null,
     "searchHint": null
   }
