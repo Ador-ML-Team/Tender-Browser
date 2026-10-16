@@ -1813,5 +1813,20 @@
     "firstSeen": "2026-10-13",
     "searchText": null,
     "searchHint": null
+  },
+  {
+    "id": "AUTO-dada63c17d",
+    "desc": "Provision of installation of Inverter",
+    "refNo": "EE/Elect/ONZ/2026-27/TC/26",
+    "location": null,
+    "value": null,
+    "dueDate": "2026-10-23",
+    "category": "Battery, BESS & Power Electronics",
+    "source": "CPPP / etenders.gov.in",
+    "url": "https://etenders.gov.in/eprocure/app?page=FrontEndAdvancedSearch&service=page",
+    "linkType": "search",
+    "firstSeen": "2026-10-16",
+    "searchText": null,
+    "searchHint": null
   }
 ]
